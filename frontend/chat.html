@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - Chat App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body>
+    <h2>Chat Room</h2>
+    <button onclick="logout()">Logout</button>
+
+    <h3>Select a Room:</h3>
+    <select id="room-select">
+        <option value="devops">DevOps</option>
+        <option value="cloud">Cloud Computing</option>
+        <option value="sports">Sports</option>
+    </select>
+    <button onclick="joinRoom()">Join Room</button>
+
+    <h3>Messages:</h3>
+    <div id="chat-box"></div>
+
+    <input type="text" id="message" placeholder="Type your message..." onkeypress="typingIndicator()">
+    <button onclick="sendMessage()">Send</button>
+    <p id="typing"></p>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>
