@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Room - Chat App</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
 </head>
+
 <body>
-    <h2>Chat Room</h2>
-    <button onclick="logout()">Logout</button>
+    <div class="chat-container">
+        <h2>Chat Room</h2>
+        <button id="logout-btn" class="logout-btn" onclick="logout()">Logout</button>
 
-    <h3>Select a Room:</h3>
-    <select id="room-select">
-        <option value="devops">DevOps</option>
-        <option value="cloud">Cloud Computing</option>
-        <option value="sports">Sports</option>
-    </select>
-    <button onclick="joinRoom()">Join Room</button>
+        <h3>Select a Room:</h3>
+        <select id="room-select">
+            <option value="devops">DevOps</option>
+            <option value="cloud">Cloud Computing</option>
+            <option value="sports">Sports</option>
+        </select>
+        <button class="join-btn" onclick="joinRoom()">Join Room</button>
+        <button class="logout-btn" onclick="leaveRoom()">Leave Room</button>
 
-    <h3>Messages:</h3>
-    <div id="chat-box"></div>
+        <h3>Private Chat:</h3>
+        <select id="user-select">
+            <option value="">Select a User</option>
+        </select>
+        <button class="private-btn" onclick="sendPrivateMessage()">Send Private Message</button>
+        
+        <h3>Messages:</h3>
+        <div id="chat-box"></div>
 
-    <input type="text" id="message" placeholder="Type your message..." onkeypress="typingIndicator()">
-    <button onclick="sendMessage()">Send</button>
-    <p id="typing"></p>
+        <div class="message-input">
+            <input type="text" id="message" placeholder="Type your message..." onkeypress="typingIndicator()">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+        <p id="typing"></p>
+    </div>
 
     <script src="js/chat.js"></script>
+    <script src="js/auth.js"></script>
 </body>
+
 </html>

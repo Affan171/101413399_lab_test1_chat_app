@@ -44,7 +44,12 @@ document.getElementById("login-form")?.addEventListener("submit", async (e) => {
     }
 });
 
-// Logout Function
+// Logout 
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("logout-btn")?.addEventListener("click", logout);
+});
+
 function logout() {
     localStorage.removeItem("token");
     window.location.href = "index.html";
