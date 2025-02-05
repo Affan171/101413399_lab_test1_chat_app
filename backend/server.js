@@ -5,7 +5,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
-// const chatRoutes = require('./routes/chatRoutes');
+const chatRoutes = require('./routes/chatRoutes');
 
 const app = express();
 const server = http.createServer(app);
@@ -23,7 +23,7 @@ connectDB();
 
 // Routes
 app.use('/auth', authRoutes);
-// app.use('/chat', chatRoutes);
+app.use('/chat', chatRoutes);
 
 // Socket.io Logic
 io.on('connection', (socket) => {
