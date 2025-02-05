@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+yarn-error.log
+npm-debug.log
+
+# Logs
+logs/
+*.log
+debug.log
+
+# Ignore environment variables (backend)
+.env
+
+# Ignore Database files
+*.db
+*.sqlite
+
+# OS-related files
+.DS_Store
+Thumbs.db
+
+# Build and Cache (for frontend)
+dist/
+build/
+.cache/
+.vscode/
